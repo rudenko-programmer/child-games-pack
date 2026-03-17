@@ -98,7 +98,7 @@
 
 .bubble-item {
   position: absolute;
-  bottom: -120px; /* Start higher for near-instant appearance */
+  bottom: -170px;
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2) 60%, rgba(0, 188, 212, 0.1) 100%);
   border: 3px solid rgba(255, 255, 255, 0.6);
   border-radius: 50%;
@@ -117,11 +117,17 @@
   0% {
     transform: translateY(0) translateX(0);
   }
-  25% { transform: translateX(25px); }
-  50% { transform: translateX(-25px); }
-  75% { transform: translateX(15px); }
+  25% {
+    transform: translateY(-36vh) translateX(25px);
+  }
+  50% {
+    transform: translateY(-72vh) translateX(-25px);
+  }
+  75% {
+    transform: translateY(-108vh) translateX(15px);
+  }
   100% {
-    transform: translateY(-145vh);
+    transform: translateY(-145vh) translateX(0);
   }
 }
 
