@@ -1,0 +1,176 @@
+.bubble-game-viewport {
+  width: 100%;
+  height: 85vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #e0f7fa 0%, #80deea 100%);
+  border-radius: 32px;
+  box-shadow: inset 0 0 100px rgba(0, 172, 193, 0.2);
+}
+
+.bubble-settings-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.bubble-card-settings {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.bubble-start-btn {
+  margin-top: 20px;
+  background: #00acc1 !important;
+}
+
+.back-to-menu-btn {
+  margin-top: 15px;
+  background: transparent;
+  border: none;
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Game Header */
+.bubble-top-bar {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+}
+
+.bubble-home-btn {
+  background: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.bubble-target {
+  background: white;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  border: 3px solid #00acc1;
+}
+
+.char-highlight {
+  color: #ff6b6b;
+  font-size: 2.5rem;
+  margin-left: 10px;
+}
+
+.bubble-score {
+  background: #ff6b6b;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Bubbles Container */
+.bubbles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bubble-item {
+  position: absolute;
+  bottom: -120px; /* Start higher for near-instant appearance */
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2) 60%, rgba(0, 188, 212, 0.1) 100%);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0, 172, 193, 0.2);
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  user-select: none;
+}
+
+/* Float Up Animation */
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  25% { transform: translateX(25px); }
+  50% { transform: translateX(-25px); }
+  75% { transform: translateX(15px); }
+  100% {
+    transform: translateY(-145vh);
+  }
+}
+
+/* Stone Falling Animation */
+.bubble-item.stone {
+  background: radial-gradient(circle at 30% 30%, #7f8c8d, #34495e 80%) !important;
+  border-color: #2c3e50 !important;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5) !important;
+  z-index: 100;
+  transition: background 0.2s;
+}
+
+.stone .bubble-text {
+  color: #bdc3c7 !important;
+  text-shadow: none !important;
+}
+
+@keyframes stoneFall {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  100% {
+    transform: translateY(120vh) rotate(120deg) scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+.bubble-shine {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 25%;
+  height: 15%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+.bubble-text {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #006064;
+  text-shadow: 0 0 15px rgba(255,255,255,0.8);
+}
+
+/* Mobile Friendly */
+@media (max-width: 600px) {
+  .bubble-target { padding: 8px 15px; font-size: 1.1rem; }
+  .char-highlight { font-size: 1.5rem; }
+  .bubble-text { font-size: 2.5rem; }
+  .bubble-item { width: 140px !important; height: 140px !important; }
+}

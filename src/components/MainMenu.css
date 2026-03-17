@@ -1,0 +1,121 @@
+.main-menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.game-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-card {
+  background: white;
+  border-radius: 30px;
+  border: none;
+  padding: 30px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card-icon {
+  font-size: 5rem;
+  background: #f8f9fa;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s;
+}
+
+.game-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.card-content h2 {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  color: #2d3436;
+}
+
+.card-content p {
+  margin: 0;
+  color: #636e72;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+/* Specific Card Styles */
+.puzzle-card:hover .card-icon {
+  background: #e3fcf7;
+}
+
+.bubble-card:hover .card-icon {
+  background: #fff0f0;
+}
+
+.badge-new {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #ff6b6b;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 700px) {
+  .game-card {
+    width: 100%;
+    flex-direction: row;
+    text-align: left;
+    padding: 20px;
+  }
+  
+  .card-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+  }
+  
+  .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

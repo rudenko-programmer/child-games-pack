@@ -1,0 +1,29 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  background-color: #f8f9fa;
+  color: #2d3436;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden; /* Критично для бокових панелей */
+}
+
+#root {
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
