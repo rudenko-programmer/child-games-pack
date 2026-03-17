@@ -31,6 +31,7 @@ npm run dev
 ## Завантаження Electron-збірки
 
 - Актуальний архів Windows x64: [abetka-electron-win-x64-v0.1.0.zip](https://github.com/rudenko-programmer/child-games-pack/releases/download/v0.1.0/abetka-electron-win-x64-v0.1.0.zip)
+- Актуальний архів Windows x32: [abetka-electron-win-x32-v0.1.0.zip](https://github.com/rudenko-programmer/child-games-pack/releases/download/v0.1.0/abetka-electron-win-x32-v0.1.0.zip)
 - Сторінка релізу: [v0.1.0](https://github.com/rudenko-programmer/child-games-pack/releases/tag/v0.1.0)
 
 Проєкт містить два ігрові режими:
